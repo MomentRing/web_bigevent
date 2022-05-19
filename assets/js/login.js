@@ -28,14 +28,14 @@ form.verify({
 // 获取 layui 弹窗
 const layer = layui.layer;
 // 设置请求根路径
-const baseUrl = 'http://www.liulongbin.top:3007';
+
 // todo 监听注册表单，发送注册请求
 $('#form_reg').on('submit', function (e) {
     // 阻止表单默认提交事件
     e.preventDefault();
     $.ajax({
         type: 'POST',
-        url: baseUrl + "/api/reguser",
+        url: "/api/reguser",
         data: {
             username: $('#form_reg [name="username"]').val(),
             password: $('#form_reg [name="password"]').val(),
@@ -55,7 +55,7 @@ $('#form_login').on('submit', function (e) {
     e.preventDefault();
     $.ajax({
         type: 'POST',
-        url: baseUrl + "/api/login",
+        url: "/api/login",
         data: $(this).serialize(),
         success: function (res) {
             if (res.status !== 0) {
